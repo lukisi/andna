@@ -23,7 +23,14 @@ using TaskletSystem;
 
 namespace Netsukuku.Andna
 {
-    public class AndnaClass : Object
+    internal ITasklet tasklet;
+    public class AndnaManager : Object //, IAndnaManagerSkeleton
     {
+        public static void init(ITasklet _tasklet)
+        {
+            // Register serializable types internal to the module.
+            // ... typeof(NeighborhoodNodeID).class_peek();
+            tasklet = _tasklet;
+        }
     }
 }
